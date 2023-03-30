@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Практическая работа №17" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <Separator/>
+                <MenuItem Header="Выход" Click="ExitProg"/>
+            </MenuItem>
+            <MenuItem Header="Функционал">
+                <MenuItem Header="Добавить запись" x:Name="addObj" Click="addObj_Click"/>
+                <MenuItem Header="Редактировать запись" x:Name="editObj" Click="editObj_Click"/>
+                <MenuItem Header="Удалить запись" x:Name="delObj" Click="delObj_Click"/>
+                <MenuItem Header="Очистить фильтр" Click="stop"/>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="dgStudents" Margin="0,18,0,106" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер зачетной книжки" Binding="{Binding Номер_зачетной_книжки}"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding ФИО}"/>
+                <DataGridTextColumn Header="Живет ли в общежитие" Binding="{Binding Живет_ли_студент_в_общежитии}"/>
+                <DataGridTextColumn Header="Индекс группы" Binding="{Binding Индекс_группы}"/>
+                <DataGridTextColumn Header="Дисциплины"/>
+                <DataGridTextColumn Header="РПМ" Binding="{Binding РПМ}"/>
+                <DataGridTextColumn Header="ТРиЗБД" Binding="{Binding ТРиЗБД}"/>
+                <DataGridTextColumn Header="ОКФСК" Binding="{Binding ОКФСК}"/>
+                <DataGridTextColumn Header="П и ТПТ" Binding="{Binding П_и_ТПТ}"/>
+                <DataGridTextColumn Header="СС и ТД" Binding="{Binding СС_и_ТД}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Удалить запись" HorizontalAlignment="Left" Margin="604,378,0,0" VerticalAlignment="Top" Width="124" Click="delObj_Click"/>
+        <Button Content="Редактировать запись" HorizontalAlignment="Left" Margin="324,378,0,0" VerticalAlignment="Top" Width="133" Click="editObj_Click"/>
+        <Button Content="Добавить запись" HorizontalAlignment="Left" Margin="56,378,0,0" VerticalAlignment="Top" Width="124" Click="addObj_Click"/>
+        <Button Content="Выбор общаги" HorizontalAlignment="Left" Margin="218,378,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="-0.379,0.615"/>
+        <TextBox x:Name="filter" HorizontalAlignment="Left" Margin="218,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" TextChanged="filter_TextChanged" TextAlignment="Center"/>
+    </Grid>
+</Window>

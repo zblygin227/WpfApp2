@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище StudentsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Студенты">
+          <Key>
+            <PropertyRef Name="Номер_зачетной_книжки" />
+          </Key>
+          <Property Name="Номер_зачетной_книжки" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
+          <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+          <Property Name="Отчество" Type="nvarchar" MaxLength="50" />
+          <Property Name="Живет_ли_студент_в_общежитии" Type="nvarchar" MaxLength="50" />
+          <Property Name="Индекс_группы" Type="int" />
+          <Property Name="РПМ" Type="nvarchar" MaxLength="50" />
+          <Property Name="ТРиЗБД" Type="nvarchar" MaxLength="50" />
+          <Property Name="ОКФСК" Type="nvarchar" MaxLength="50" />
+          <Property Name="П_и_ТПТ" Type="nvarchar" MaxLength="50" />
+          <Property Name="СС_и_ТД" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Хранилище StudentsModelContainer">
+          <EntitySet Name="Студенты" EntityType="Self.Студенты" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudentsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="StudentsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Студенты" EntityType="StudentsModel.Студенты" />
+        </EntityContainer>
+        <EntityType Name="Студенты">
+          <Key>
+            <PropertyRef Name="Номер_зачетной_книжки" />
+          </Key>
+          <Property Name="Номер_зачетной_книжки" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Отчество" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Живет_ли_студент_в_общежитии" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Индекс_группы" Type="Int32" />
+          <Property Name="РПМ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ТРиЗБД" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ОКФСК" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="П_и_ТПТ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="СС_и_ТД" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище StudentsModelContainer" CdmEntityContainer="StudentsEntities">
+          <EntitySetMapping Name="Студенты">
+            <EntityTypeMapping TypeName="StudentsModel.Студенты">
+              <MappingFragment StoreEntitySet="Студенты">
+                <ScalarProperty Name="СС_и_ТД" ColumnName="СС_и_ТД" />
+                <ScalarProperty Name="П_и_ТПТ" ColumnName="П_и_ТПТ" />
+                <ScalarProperty Name="ОКФСК" ColumnName="ОКФСК" />
+                <ScalarProperty Name="ТРиЗБД" ColumnName="ТРиЗБД" />
+                <ScalarProperty Name="РПМ" ColumnName="РПМ" />
+                <ScalarProperty Name="Индекс_группы" ColumnName="Индекс_группы" />
+                <ScalarProperty Name="Живет_ли_студент_в_общежитии" ColumnName="Живет_ли_студент_в_общежитии" />
+                <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="Номер_зачетной_книжки" ColumnName="Номер_зачетной_книжки" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
